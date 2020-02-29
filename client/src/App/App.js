@@ -3,9 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import List from './pages/List';
+import NavBar from './pages/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
   render() {
+    /** 
     const App = () => (
       <div>
         <Switch>
@@ -13,12 +16,14 @@ class App extends Component {
           <Route path='/list' component={List}/>
         </Switch>
       </div>
-    )
+    )**/
     return (
+      <NavBar />
+      /** 
       <Switch>
         <App/>
-      </Switch>
-    );
+      </Switch>**/
+    )
   }
 }
 
