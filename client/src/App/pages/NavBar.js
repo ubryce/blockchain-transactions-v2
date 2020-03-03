@@ -15,9 +15,9 @@ function NavBar() {
             <div className="nav-wrapper">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Overview</a></li>
-                    <li><a href="#">Prices</a></li>
-                    <li><a href="#">Purchases</a></li>
+                    <li><a href="#">Bitcoin</a></li>
+                    <li><a href="#">Ethereum</a></li>
+                    <li><a href="#">API</a></li>
                 </ul>
             </div>
         </nav>
