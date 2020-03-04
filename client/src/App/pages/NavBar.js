@@ -10,7 +10,7 @@ function NavBar() {
                 <i></i>
             </label>
             <div className="logo">
-                <a href="#">BRAND</a>
+                <a href="#">Blockchain Transactions</a>
             </div>
             <div className="nav-wrapper">
                 <ul>
