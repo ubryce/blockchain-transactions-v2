@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
-import List from './pages/List';
 import NavBar from './pages/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
