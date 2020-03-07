@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './pages/NavBar';
+import Footer from './pages/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
@@ -16,7 +17,10 @@ class App extends Component {
       </div>
     )**/
     return (
-      <NavBar />
+      <div>
+        <NavBar />
+        <Footer />
+      </div>
       /** 
       <Switch>
         <App/>
