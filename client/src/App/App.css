@@ -203,4 +203,9 @@ nav ul li a {
       display: none;
 }
 
-
+.display {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+}
