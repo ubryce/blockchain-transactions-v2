@@ -5,6 +5,7 @@ import NavBar from './pages/NavBar';
 import Footer from './pages/Footer';
 import Display from './pages/Display';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import LandingPage from './pages/LandingPage';
 
 class App extends Component {
   render() {

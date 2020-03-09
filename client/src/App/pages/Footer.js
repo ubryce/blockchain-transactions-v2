@@ -6,7 +6,7 @@ function Footer() {
         <div>
         <footer className="footer text-center">
             <div className="container">
-                <p className="footer-text">Copyright 2020 Blockchain. All rights reserved</p>
+                <p className="footer-text">2020 by Bryce Nguyen. All rights reserved</p>
             </div>
         </footer>
         </div>
