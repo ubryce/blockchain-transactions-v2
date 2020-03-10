@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './pages/NavBar';
 import Footer from './pages/Footer';
 import Display from './pages/Display';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import LandingPage from './pages/LandingPage';
+import Bitcoin from './pages/Bitcoin';
+import Ethereum from './pages/Ethereum';
 
 class App extends Component {
   render() {
@@ -19,11 +20,17 @@ class App extends Component {
       </div>
     )**/
     return (
-      <div>
-        <NavBar />
-        <Display/>
-        <Footer />
-      </div>
+      <Router>
+        <div>
+          <NavBar />
+          <Switch>
+            <Route exact path='/' component={Display}/>
+            <Route path='/bitcoin' component={Bitcoin}/>
+            <Route path='/ethereum' component={Ethereum}/>
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
       /** 
       <Switch>
         <App/>

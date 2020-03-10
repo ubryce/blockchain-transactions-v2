@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 
 function NavBar() {
     return (
@@ -10,13 +11,13 @@ function NavBar() {
                 <i></i>
             </label>
             <div className="logo">
-                <a href="#">Blockchain Transactions</a>
+                <a href="/">Blockchain Transactions</a>
             </div>
             <div className="nav-wrapper">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Bitcoin</a></li>
-                    <li><a href="#">Ethereum</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/bitcoin">Bitcoin</a></li>
+                    <li><a href="/ethereum">Ethereum</a></li>
                     <li><a href="#">API</a></li>
                 </ul>
             </div>
