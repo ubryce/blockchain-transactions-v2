@@ -1,6 +1,11 @@
 import React from 'react'
 
 function Ethereum() {
+
+    
+
+
+
     return (
         <div>
             <h1>Ethereum</h1>
