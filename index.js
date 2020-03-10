@@ -53,7 +53,7 @@ function getData(){
 
 }
 
-app.get('/getTransactions', (req,res) => {
+app.get('/api/getTransactions', (req,res) => {
 	const ends = Math.round((new Date()).getTime() / 1000);
 	const starts = ends - 30000;
 	const end = starts + 7600

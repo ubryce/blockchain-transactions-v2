@@ -8,6 +8,9 @@ import Display from './pages/Display';
 import Bitcoin from './pages/Bitcoin';
 import Ethereum from './pages/Ethereum';
 import API from './pages/API';
+import LiveMap from './pages/LiveMap';
+
+import Transactions from './pages/Transactions';
 
 class App extends Component {
   render() {
@@ -21,6 +24,19 @@ class App extends Component {
       </div>
     )**/
     return (
+      <Router>
+        <div>
+          <NavBar />
+          <Switch>
+            <Route exact path='/' component={Display}/>
+            <Route path='/liveMap' component={LiveMap}/>
+            <Route path='/transactions' component={Transactions}/>
+            <Route path='/api' component={API}/>
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+      /*
       <Router>
         <div>
           <NavBar />
