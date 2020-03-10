@@ -7,6 +7,7 @@ import Footer from './pages/Footer';
 import Display from './pages/Display';
 import Bitcoin from './pages/Bitcoin';
 import Ethereum from './pages/Ethereum';
+import API from './pages/API';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path='/' component={Display}/>
             <Route path='/bitcoin' component={Bitcoin}/>
             <Route path='/ethereum' component={Ethereum}/>
+            <Route path='/api' component={API}/>
           </Switch>
           <Footer />
         </div>

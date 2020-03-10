@@ -18,7 +18,7 @@ function NavBar() {
                     <li><a href="/">Home</a></li>
                     <li><a href="/bitcoin">Bitcoin</a></li>
                     <li><a href="/ethereum">Ethereum</a></li>
-                    <li><a href="#">API</a></li>
+                    <li><a href="/api">API</a></li>
                 </ul>
             </div>
         </nav>
