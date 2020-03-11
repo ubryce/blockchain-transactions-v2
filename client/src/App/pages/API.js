@@ -4,6 +4,7 @@ function API() {
     return (
         <div>
             <h1>API</h1>
+            <p>coming soon...</p>
         </div>
     );
 }
