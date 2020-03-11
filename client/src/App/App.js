@@ -13,6 +13,12 @@ import LiveMap from './pages/LiveMap';
 import Transactions from './pages/Transactions';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        isNavbarHidden: false
+    };
+  }
   render() {
     /** 
     const App = () => (
@@ -24,18 +30,18 @@ class App extends Component {
       </div>
     )**/
     return (
-      <Router>
-        <div>
-          <NavBar />
-          <Switch>
-            <Route exact path='/' component={Display}/>
-            <Route path='/liveMap' component={LiveMap}/>
-            <Route path='/transactions' component={Transactions}/>
-            <Route path='/api' component={API}/>
-          </Switch>
-          <Footer />
-        </div>
-      </Router>
+      <div>
+        { (this.state.isNavBarHidden) ? null : <NavBar /> }
+        <Router>
+            <Switch>
+              <Route exact path='/' component={Display}/>
+              <Route path='/liveMap' component={LiveMap}/>
+              <Route path='/transactions' component={Transactions}/>
+              <Route path='/api' component={API} />
+            </Switch>
+        </Router>
+        { (this.state.isNavBarHidden) ? null : <Footer /> }
+      </div>
       /*
       <Router>
         <div>
