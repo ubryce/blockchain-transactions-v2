@@ -11,13 +11,13 @@ function NavBar() {
                 <i></i>
             </label>
             <div className="logo">
-                <a href="/">Blockchain Transactions</a>
+                <a style={{ textDecoration: 'none' }} href="/">Blockchain Transactions</a>
             </div>
             <div className="nav-wrapper">
                 <ul>
-                    <li><a href="/liveMap">Live Map</a></li>
-                    <li><a href="/transactions">Transactions</a></li>
-                    <li><a href="/api">API</a></li>
+                    <li><a style={{ textDecoration: 'none' }} href="/liveMap">Live Map</a></li>
+                    <li><a style={{ textDecoration: 'none' }} href="/transactions">Transactions</a></li>
+                    <li><a style={{ textDecoration: 'none' }} href="/api">API</a></li>
                 </ul>
             </div>
         </nav>

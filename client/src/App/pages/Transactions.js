@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 
 
@@ -42,12 +41,12 @@ class Transactions extends Component{
                         <tbody>
                             {this.state.transaction.map((transaction, i) => {
                                 return (
-                                    <tr key={i}>
-                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.blockchain}</a></td>
-                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.amount}</a></td>
-                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.amount_usd}</a></td>
-                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.from.owner}</a></td>
-                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.to.owner}</a></td>
+                                    <tr key={i} style={{ textAlign: 'center', }}>
+                                        <td><a style={{ textDecoration: 'none', color: 'black',}} href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.blockchain}</a></td>
+                                        <td><a style={{ textDecoration: 'none', color: 'black' }} href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.amount}</a></td>
+                                        <td><a style={{ textDecoration: 'none', color: 'black' }} href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.amount_usd}</a></td>
+                                        <td><a style={{ textDecoration: 'none', color: 'black' }} href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.from.owner}</a></td>
+                                        <td><a style={{ textDecoration: 'none', color: 'black' }} href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.to.owner}</a></td>
                                     </tr>
                                 )
                             })}
