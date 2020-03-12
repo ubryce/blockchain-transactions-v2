@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -62,12 +62,12 @@ class Transactions extends Component{
                         <tbody>
                             {this.state.transaction.map((transaction, i) => {
                                 return (
-                                    <tr key={i}>
-                                        <td>{transaction.blockchain}</td>
-                                        <td>{transaction.amount}</td>
-                                        <td>{transaction.amount_usd}</td>
-                                        <td>{transaction.from.owner}</td>
-                                        <td>{transaction.to.owner}</td>
+                                    <tr key={i} href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>
+                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.blockchain}</a></td>
+                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.amount}</a></td>
+                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.amount_usd}</a></td>
+                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.from.owner}</a></td>
+                                        <td><a href={'https://www.blockchain.com/btc/tx/' + transaction.hash}>{transaction.to.owner}</a></td>
                                     </tr>
                                 )
                             })}
