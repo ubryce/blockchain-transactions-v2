@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Iframe from 'react-iframe'
-import IframeComponent from './iFrameComponent';
 
 
 class LiveMap extends Component {

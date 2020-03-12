@@ -9,7 +9,7 @@ import Bitcoin from './pages/Bitcoin';
 import Ethereum from './pages/Ethereum';
 import API from './pages/API';
 import LiveMap from './pages/LiveMap';
-
+import { Redirect } from 'react-router';
 import Transactions from './pages/Transactions';
 
 class App extends Component {
@@ -18,6 +18,14 @@ class App extends Component {
     this.state = {
         isNavbarHidden: false
     };
+  }
+  componentDidMount () {
+    document.title = "Blockchain Transactions";
+    const currentRoute = this.props.location;
+    console.log(currentRoute);
+    if (currentRoute === '/api') {
+      this.setState({ isNavbarHidden: false });
+    }
   }
   render() {
     /** 
@@ -29,18 +37,34 @@ class App extends Component {
         </Switch>
       </div>
     )**/
+
+    const APIContainer = () => (
+      <div className="container">
+        <Route exact path="/" render={() => <Redirect to="/api" />} />
+        <Route path="/api" component={API} />
+      </div>
+    )
+
+    const DefaultContainer = () => (
+      <div>
+        <NavBar/>
+        <Route exact path='/' component={Display}/>
+        <Route path='/liveMap' component={LiveMap}/>
+        <Route path='/transactions' component={Transactions}/>
+        <Footer/>
+      </div>
+   )
+
     return (
       <div>
-        { (this.state.isNavBarHidden) ? null : <NavBar /> }
+        
         <Router>
             <Switch>
-              <Route exact path='/' component={Display}/>
-              <Route path='/liveMap' component={LiveMap}/>
-              <Route path='/transactions' component={Transactions}/>
-              <Route path='/api' component={API} />
+              <Route exact path="/(api)" component={APIContainer}/>
+              <Route component={DefaultContainer}/>
             </Switch>
         </Router>
-        { (this.state.isNavBarHidden) ? null : <Footer /> }
+        
       </div>
       /*
       <Router>
