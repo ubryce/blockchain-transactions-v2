@@ -1,6 +1,8 @@
 # Blockchain Transactions v2
  A website that displays all transactions above $1 000 000 USD that are made on the blockchain and also stores it into a mongoDB. Once saved, we then take the 100 most recent transactions processed and displays them on a webpage using React. Once displayed we are able to click on any of the transactions to then take us to www.Blockchain.com where it shows that exact transaction. I will be implementing tons of new features as I have lots of ideas for this project.
  
+ LINK: https://blockchaintransactions.herokuapp.com/
+ 
  This application uses Node.js using Express for the back end and React and React Router for the front end. While using MongoDB for our database and the Blockchain API to view the transactions.
  
 ## API
@@ -39,7 +41,7 @@ $ npm run start:prod
 4.
 To look at the website go to 
 
-http://localhost:4000/
+http://localhost:3000/
 
 
 5.
