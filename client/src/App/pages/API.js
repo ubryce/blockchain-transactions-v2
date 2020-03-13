@@ -16,17 +16,9 @@ class API extends Component {
     render(){
 
     return (
-        <List>
-            {this.state.transaction.map(el => {
-                return (
-                    <List.Item key={i}>
-                        <List.Content>
-                            
-                        </List.Content>
-                    </List.Item>
-                )
-            })}
-        </List>
+        <div>
+            Api Coming soon
+        </div>
     );
 }
 }

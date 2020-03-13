@@ -57,14 +57,14 @@ class App extends Component {
 
     return (
       <div>
-        
+        <NavBar/>
         <Router>
             <Switch>
               <Route exact path="/(api)" component={APIContainer}/>
               <Route component={DefaultContainer}/>
             </Switch>
         </Router>
-        
+        <Footer/>
       </div>
       /*
       <Router>
