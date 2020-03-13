@@ -40,8 +40,10 @@ class App extends Component {
 
     const APIContainer = () => (
       <div className="container">
+        <NavBar/>
         <Route exact path="/" render={() => <Redirect to="/api" />} />
         <Route path="/api" component={API} />
+        <Footer/>
       </div>
     )
 
@@ -57,14 +59,14 @@ class App extends Component {
 
     return (
       <div>
-        <NavBar/>
+    
         <Router>
             <Switch>
               <Route exact path="/(api)" component={APIContainer}/>
               <Route component={DefaultContainer}/>
             </Switch>
         </Router>
-        <Footer/>
+        
       </div>
       /*
       <Router>
