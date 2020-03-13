@@ -20,6 +20,7 @@
 * How to create a responsive Navigation bar in React
 * How React uses states to control which components are rendered.
 * How to use React Router to route links
+* How to use display wigets in React
 
 ## Running the app
 
