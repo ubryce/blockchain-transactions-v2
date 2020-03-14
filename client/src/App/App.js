@@ -28,16 +28,6 @@ class App extends Component {
     }
   }
   render() {
-    /** 
-    const App = () => (
-      <div>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/list' component={List}/>
-        </Switch>
-      </div>
-    )**/
-
     const APIContainer = () => (
       <div className="container">
         <NavBar/>
@@ -56,7 +46,6 @@ class App extends Component {
         <Footer/>
       </div>
    )
-
     return (
       <div>
     
