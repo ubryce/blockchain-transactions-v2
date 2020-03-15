@@ -25,6 +25,7 @@ app.get('/api/getList', (req,res) => {
 	console.log('Sent list of items');
 });
 
+//connect to database
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, ()=> 
 	console.log("connected to DB")
 );
@@ -53,6 +54,7 @@ function getData(){
 
 }
 
+//API request to blockchain API
 app.get('/api/getTransactions', (req,res) => {
 	const ends = Math.round((new Date()).getTime() / 1000);
 	const starts = ends - 30000;
