@@ -17,6 +17,8 @@ function NavBar() {
                 <ul>
                     <li><a style={{ textDecoration: 'none' }} href="/liveMap">Live Map</a></li>
                     <li><a style={{ textDecoration: 'none' }} href="/transactions">Transactions</a></li>
+                    <li><a style={{ textDecoration: 'none' }} href="/bitcoin">Bitcoin</a></li>
+                    <li><a style={{ textDecoration: 'none' }} href="/ethereum">Ethereum</a></li>
                     <li><a style={{ textDecoration: 'none' }} href="/api">API</a></li>
                 </ul>
             </div>

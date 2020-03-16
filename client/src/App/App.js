@@ -43,6 +43,8 @@ class App extends Component {
         <Route exact path='/' component={Display}/>
         <Route path='/liveMap' component={LiveMap}/>
         <Route path='/transactions' component={Transactions}/>
+        <Route path='/bitcoin' component={Bitcoin}/>
+        <Route path='/ethereum' component={Ethereum}/>
         <Footer/>
       </div>
    )
