@@ -30,10 +30,10 @@ class App extends Component {
   render() {
     const APIContainer = () => (
       <div className="container">
-        <NavBar/>
+        
         <Route exact path="/" render={() => <Redirect to="/api" />} />
         <Route path="/api" component={API} />
-        <Footer/>
+        
       </div>
     )
 

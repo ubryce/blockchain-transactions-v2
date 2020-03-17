@@ -30,29 +30,17 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, ()=>
 	console.log("connected to DB")
 );
 
-function getData(){
-	const ends = Math.round((new Date()).getTime() / 1000);
-	const starts = ends - 30000;
-	const end = starts + 7600
-	//console.log(ends);
-	https.get(`https://api.whale-alert.io/v1/transactions?api_key=KtE5Gw2adzR9RT0SX8TGuF2e0k72Y1mq&min_value=500000&start=${String(starts)}&end=${String(end)}&cursor=2bc7e46-2bc7e46-5c66c0a7`, (resp) => {
-		let data  = '';
-		resp.on('data', (chunk) => {
-		data += chunk;
-		});
+const connection = new WebSocket('wss://ws.blockchain.info/inv');
+// When the connection is open, send some data to the server
+connection.onopen = function () {
+	connection.send('Ping'); // Send the message 'Ping' to the server
+};
 
-		resp.on('end', () => {
-		var deta = {};
-		deta = JSON.parse(data).transactions;
-		//console.log(deta);
-		//return deta;
-		});
-	})
-	.on('error', (err) => {
-		console.log("err " + err.message);
-	});
+connection.onmessage = function (e) {
+	console.log('Server: ' + e.data);
+};
 
-}
+connection();
 
 //API request to blockchain API
 app.get('/api/getTransactions', (req,res) => {
