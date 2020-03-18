@@ -30,17 +30,6 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, ()=>
 	console.log("connected to DB")
 );
 
-const connection = new WebSocket('wss://ws.blockchain.info/inv');
-// When the connection is open, send some data to the server
-connection.onopen = function () {
-	connection.send('Ping'); // Send the message 'Ping' to the server
-};
-
-connection.onmessage = function (e) {
-	console.log('Server: ' + e.data);
-};
-
-connection();
 
 //API request to blockchain API
 app.get('/api/getTransactions', (req,res) => {
