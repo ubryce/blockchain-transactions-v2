@@ -59,23 +59,6 @@ class App extends Component {
         </Router>
         
       </div>
-      /*
-      <Router>
-        <div>
-          <NavBar />
-          <Switch>
-            <Route exact path='/' component={Display}/>
-            <Route path='/bitcoin' component={Bitcoin}/>
-            <Route path='/ethereum' component={Ethereum}/>
-            <Route path='/api' component={API}/>
-          </Switch>
-          <Footer />
-        </div>
-      </Router>
-      /** 
-      <Switch>
-        <App/>
-      </Switch>**/
     )
   }
 }
