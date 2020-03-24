@@ -13,12 +13,14 @@ import { Redirect } from 'react-router';
 import Transactions from './pages/Transactions';
 
 class App extends Component {
+  //set state
   constructor(props){
     super(props);
     this.state = {
         isNavbarHidden: false
     };
   }
+
   componentDidMount () {
     document.title = "Blockchain Transactions";
     const currentRoute = this.props.location;
@@ -28,6 +30,8 @@ class App extends Component {
     }
   }
   render() {
+
+    //if on API
     const APIContainer = () => (
       <div className="container">
         
@@ -37,6 +41,7 @@ class App extends Component {
       </div>
     )
 
+    //if on anything other than API page
     const DefaultContainer = () => (
       <div>
         <NavBar/>
