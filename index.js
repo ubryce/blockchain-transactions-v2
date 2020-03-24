@@ -8,19 +8,6 @@ const WebSocket = require('ws');
 
 const https = require('https');
 
-// create websocket
-var ws = new WebSocket("wss://ws.blockchain.info/inv");
-
-// websocket function
-ws.on('open', function open(){
-	ws.send(JSON.stringify({"op":"unconfirmed_sub"}));
-})
-
-// log data
-ws.on('message', function incoming(data){
-	console.log(data);
-})
-
 
 app.use(bodyParser.json());
 
@@ -68,8 +55,18 @@ app.get('/api/getTransactions', (req,res) => {
 	});
 });
 
-/*
-setInterval(getData(),10800000);*/
+// create websocket
+var ws = new WebSocket("wss://ws.blockchain.info/inv");
+
+// websocket function
+ws.on('open', function open(){
+	ws.send(JSON.stringify({"op":"unconfirmed_sub"}));
+})
+
+// log data
+ws.on('message', function incoming(data){
+	console.log(data);
+})
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
