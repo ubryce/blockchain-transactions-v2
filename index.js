@@ -4,9 +4,37 @@ const mongoose = require('mongoose')
 const app = express();
 const bodyParser = require('body-parser')
 require('dotenv/config')
+const WebSocket = require('ws');
 
 const https = require('https');
 
+// create websocket
+var ws = new WebSocket("wss://ws.blockchain.info/inv");
+
+// websocket function
+ws.on('open', function open(){
+	ws.send(JSON.stringify({ "op":"ping" }));
+})
+
+ws.on('message', function incoming(data){
+	console.log(data);
+})
+/*
+ws.on = function(){
+
+	ws.send(JSON.stringify({ "op":"ping" }))
+
+};
+
+ws.onmessage = function(msg){
+
+	var response = JSON.parse(msg.data);
+	var hb = response[1];
+	if(hb !== "hb"){
+		console.log(hb);
+	}
+
+};*/
 
 
 app.use(bodyParser.json());
