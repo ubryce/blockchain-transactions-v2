@@ -13,28 +13,13 @@ var ws = new WebSocket("wss://ws.blockchain.info/inv");
 
 // websocket function
 ws.on('open', function open(){
-	ws.send(JSON.stringify({ "op":"ping" }));
+	ws.send(JSON.stringify({"op":"unconfirmed_sub"}));
 })
 
+// log data
 ws.on('message', function incoming(data){
 	console.log(data);
 })
-/*
-ws.on = function(){
-
-	ws.send(JSON.stringify({ "op":"ping" }))
-
-};
-
-ws.onmessage = function(msg){
-
-	var response = JSON.parse(msg.data);
-	var hb = response[1];
-	if(hb !== "hb"){
-		console.log(hb);
-	}
-
-};*/
 
 
 app.use(bodyParser.json());
