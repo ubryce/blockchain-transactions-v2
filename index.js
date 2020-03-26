@@ -56,10 +56,10 @@ app.get('/api/getTransactions', (req,res) => {
 });
 
 // create websocket
-var ws = new WebSocket("wss://ws.blockchain.info/inv");
+var BTCws = new WebSocket("wss://ws.blockchain.info/inv");
 
 // websocket open function
-ws.on('open', function open(){
+BTCws.on('open', function open(){
 	ws.send(JSON.stringify({"op":"unconfirmed_sub"}));
 })
 
@@ -70,8 +70,20 @@ ws.on('close', function close() {
 
 // log data
 ws.on('message', function incoming(data){
-	console.log(data);
+	//console.log(data);
 })
+
+const wss = new WebSocket.Server({ port: 8080 });
+
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(message) {
+    console.log(message);
+  });
+
+  BTCWS.on("message", function incoming(data) {
+      ws.send(data);
+  });
+});
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
