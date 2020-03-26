@@ -58,10 +58,15 @@ app.get('/api/getTransactions', (req,res) => {
 // create websocket
 var ws = new WebSocket("wss://ws.blockchain.info/inv");
 
-// websocket function
+// websocket open function
 ws.on('open', function open(){
 	ws.send(JSON.stringify({"op":"unconfirmed_sub"}));
 })
+
+// websocket close function
+ws.on('close', function close() {
+	console.log('disconnected');
+  });
 
 // log data
 ws.on('message', function incoming(data){
