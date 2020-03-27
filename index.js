@@ -58,30 +58,30 @@ app.get('/api/getTransactions', (req,res) => {
 // create websocket
 var BTCws = new WebSocket("wss://ws.blockchain.info/inv");
 
+var websocketList = [];
+
 // websocket open function
 BTCws.on('open', function open(){
 	ws.send(JSON.stringify({"op":"unconfirmed_sub"}));
 })
 
-// websocket close function
-ws.on('close', function close() {
-	console.log('disconnected');
-  });
-
 // log data
-ws.on('message', function incoming(data){
-	//console.log(data);
+BTCws.on('message', function incoming(data){
+	console.log(data);
+
+	websocketList.forEach(ws => {
+        ws.send(data);
+    });
 })
 
 const wss = new WebSocket.Server({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
-  ws.on('message', function incoming(message) {
-    console.log(message);
-  });
+  // add ws handle to websocket list.
+  websocketList.push(ws);
 
-  BTCWS.on("message", function incoming(data) {
-      ws.send(data);
+  ws.on("close", function close() {
+	  console.log("Disconnected");
   });
 });
 
