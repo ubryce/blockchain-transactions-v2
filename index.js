@@ -74,12 +74,15 @@ BTCws.on('message', function incoming(data){
     });
 })
 
+// create server
 const wss = new WebSocket.Server({ port: 8080 });
 
+// on connection
 wss.on('connection', function connection(ws) {
   // add ws handle to websocket list.
   websocketList.push(ws);
 
+  // close function
   ws.on("close", function close() {
 	  console.log("Disconnected");
   });
