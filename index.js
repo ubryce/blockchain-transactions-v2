@@ -82,10 +82,6 @@ wss.on('connection', function connection(ws) {
   // add ws handle to websocket list.
   websocketList.push(ws);
 
-  // close function
-  ws.on("close", function close() {
-	  console.log("Disconnected");
-  });
 });
 
 // Handles any requests that don't match the ones above
