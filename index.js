@@ -26,6 +26,7 @@ app.get('/api/getList', (req,res) => {
 	console.log('Sent list of items');
 });
 */
+
 //connect to database
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, ()=> 
 	console.log("connected to DB")
@@ -37,7 +38,6 @@ app.get('/api/getTransactions', (req,res) => {
 	const ends = Math.round((new Date()).getTime() / 1000);
 	const starts = ends - 30000;
 	const end = starts + 7600
-	//console.log(ends);
 	https.get(`https://api.whale-alert.io/v1/transactions?api_key=KtE5Gw2adzR9RT0SX8TGuF2e0k72Y1mq&min_value=500000&start=${String(starts)}&end=${String(end)}&cursor=2bc7e46-2bc7e46-5c66c0a7`, (resp) => {
 		let data  = '';
 		resp.on('data', (chunk) => {
