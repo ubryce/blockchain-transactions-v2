@@ -63,7 +63,7 @@ var websocketList = [];
 
 // websocket open function
 BTCws.on('open', function open(){
-	ws.send(JSON.stringify({"op":"unconfirmed_sub"}));
+	BTCws.send(JSON.stringify({"op":"unconfirmed_sub"}));
 })
 
 // log data
