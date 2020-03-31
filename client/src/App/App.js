@@ -21,8 +21,6 @@ class App extends Component {
     };
   }
 
-  const socket = new WebSocket('server_url'); // Connection opened 
-  socket.addEventListener('message', function (event) { socket.send('send message'); });
 
   componentDidMount () {
     document.title = "Blockchain Transactions";
