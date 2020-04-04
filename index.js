@@ -51,8 +51,6 @@ app.get('/api/getTransactions', (req,res) => {
 // create websocket
 var BTCws = new WebSocket("wss://ws.blockchain.info/inv");
 
-var ETHws = new WebSocket('wss://ws.web3api.io', {headers: {x-api-key:'<api_key>'}});
-
 var websocketList = [];
 
 // websocket open function
@@ -60,14 +58,6 @@ BTCws.on('open', function open(){
 	BTCws.send(JSON.stringify({"op":"unconfirmed_sub"}));
 })
 
-ETHws.on('open', () => {
-	ETHws.send(JSON.stringify({
-		jsonrpc: '2.0',
-		method: 'subscribe',
-		params: ['pending_transaction', {hash: '0x6c80ebbe94deb54d84e7d22b0eac014275d3a2df97e5afa0e7bf408ae9bc8b22'}],
-		id: 1,
-	  }));
-  });
 
 // log data
 BTCws.on('message', function incoming(data){
@@ -77,10 +67,6 @@ BTCws.on('message', function incoming(data){
         ws.send(data);
     });
 })
-
-ETHws.on('message', data => {
-	console.log(JSON.stringify(JSON.parse(data), null, 2));
-  });
 
 // create server
 const wss = new WebSocket.Server({ port: 8080 });
